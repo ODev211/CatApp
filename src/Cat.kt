@@ -4,8 +4,12 @@ class Cat (val name: String, var age: Int, var weight: Int) {
         weight--
     }
 
-    fun eat() {
-        weight += 1
+    fun eat(amount: Int) {
+        if (weight + amount >= 20) {
+            throw IllegalArgumentException("Weight cannot exceed 20.")
+        }
+        weight += amount
+
     }
 
     override fun toString() : String {
